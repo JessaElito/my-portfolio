@@ -1,0 +1,1218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Jessa Mara T. Elito | Software Engineer & Web Developer</title>
+  <meta name="description" content="Portfolio of Jessa Mara T. Elito, software engineer and web developer specializing in .NET, Angular, and enterprise web applications." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg-main: #050816;
+      --bg-alt: #0b1020;
+      --accent: #00e0ff;
+      --accent-soft: rgba(0, 224, 255, 0.1);
+      --text-main: #f5f7ff;
+      --text-muted: #a0a6c0;
+      --card-bg: #0f172a;
+      --border-subtle: rgba(148, 163, 184, 0.2);
+      --shadow-soft: 0 18px 45px rgba(15, 23, 42, 0.9);
+      --radius-lg: 18px;
+      --radius-pill: 999px;
+      --transition-fast: 0.18s ease-out;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: "Poppins", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: radial-gradient(circle at top, #1e293b 0, #020617 45%, #000 100%);
+      color: var(--text-main);
+      line-height: 1.6;
+      scroll-behavior: smooth;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    main {
+      max-width: 1120px;
+      margin: 0 auto;
+      padding: 32px 20px 64px;
+    }
+
+    section {
+      margin-bottom: 64px;
+    }
+
+    h1, h2, h3, h4 {
+      font-weight: 600;
+      letter-spacing: 0.02em;
+    }
+
+    .chip {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 6px 14px;
+      border-radius: var(--radius-pill);
+      border: 1px solid rgba(148, 163, 184, 0.4);
+      background: radial-gradient(circle at top left, rgba(56, 189, 248, 0.2), transparent);
+      color: var(--accent);
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+    }
+
+    .chip-dot {
+      width: 7px;
+      height: 7px;
+      border-radius: 999px;
+      background: var(--accent);
+      box-shadow: 0 0 14px rgba(56, 189, 248, 0.85);
+    }
+
+    .pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 6px 14px;
+      border-radius: var(--radius-pill);
+      background: rgba(15, 23, 42, 0.8);
+      border: 1px solid rgba(148, 163, 184, 0.25);
+      font-size: 11px;
+      color: var(--text-muted);
+      white-space: nowrap;
+    }
+
+    .pill-dot {
+      width: 7px;
+      height: 7px;
+      border-radius: 999px;
+      background: #22c55e;
+      box-shadow: 0 0 10px rgba(34, 197, 94, 0.8);
+    }
+
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 4px 10px;
+      border-radius: 999px;
+      font-size: 10px;
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+      background: rgba(15, 23, 42, 0.9);
+      border: 1px solid rgba(148, 163, 184, 0.35);
+      color: var(--text-muted);
+    }
+
+    .badge-accent {
+      border-color: rgba(45, 212, 191, 0.9);
+      color: #a5f3fc;
+      background: radial-gradient(circle at top left, rgba(34, 211, 238, 0.2), rgba(15, 23, 42, 0.95));
+    }
+
+    .badge-dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 999px;
+      background: var(--accent);
+    }
+
+    .nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 32px;
+      gap: 16px;
+    }
+
+    .nav-left {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .avatar-initials {
+      width: 36px;
+      height: 36px;
+      border-radius: 12px;
+      display: grid;
+      place-items: center;
+      background: radial-gradient(circle at top, rgba(56, 189, 248, 0.5), #020617);
+      color: #e5e7eb;
+      font-size: 16px;
+      font-weight: 600;
+      border: 1px solid rgba(148, 163, 184, 0.4);
+      box-shadow: 0 10px 25px rgba(15, 23, 42, 0.8);
+    }
+
+    .nav-name {
+      font-size: 14px;
+      color: var(--text-muted);
+    }
+
+    .nav-name strong {
+      font-size: 15px;
+      font-weight: 500;
+      color: #e2e8f0;
+    }
+
+    .nav-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      justify-content: flex-end;
+    }
+
+    .nav-link {
+      font-size: 12px;
+      color: var(--text-muted);
+      padding: 4px 10px;
+      border-radius: 999px;
+      border: 1px solid transparent;
+      transition: color var(--transition-fast), border-color var(--transition-fast), background var(--transition-fast);
+    }
+
+    .nav-link:hover {
+      color: #e5e7eb;
+      border-color: rgba(148, 163, 184, 0.5);
+      background: rgba(15, 23, 42, 0.9);
+    }
+
+    .hero {
+      display: grid;
+      grid-template-columns: minmax(0, 1.4fr) minmax(0, 1.1fr);
+      gap: 32px;
+      align-items: center;
+      margin-bottom: 56px;
+    }
+
+    .hero-left {
+      display: flex;
+      flex-direction: column;
+      gap: 18px;
+    }
+
+    .hero-title {
+      font-size: clamp(30px, 4vw, 40px);
+      font-weight: 600;
+      line-height: 1.15;
+    }
+
+    .hero-title span {
+      display: inline-block;
+      background: linear-gradient(120deg, #7dd3fc, #38bdf8, #a5b4fc);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+
+    .hero-subtitle {
+      color: var(--text-muted);
+      max-width: 520px;
+      font-size: 14px;
+    }
+
+    .hero-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 4px;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 8px;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      padding: 10px 18px;
+      border-radius: var(--radius-pill);
+      border: 1px solid transparent;
+      font-size: 13px;
+      cursor: pointer;
+      transition: background var(--transition-fast), transform var(--transition-fast), box-shadow var(--transition-fast), border-color var(--transition-fast), color var(--transition-fast);
+    }
+
+    .btn-primary {
+      background: radial-gradient(circle at top left, #0ea5e9, #0369a1);
+      color: #e5f4ff;
+      box-shadow: 0 16px 35px rgba(8, 47, 73, 0.9);
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 18px 42px rgba(8, 47, 73, 1);
+    }
+
+    .btn-ghost {
+      background: rgba(15, 23, 42, 0.9);
+      border-color: rgba(148, 163, 184, 0.5);
+      color: #e5e7eb;
+    }
+
+    .btn-ghost:hover {
+      background: rgba(15, 23, 42, 1);
+      border-color: rgba(148, 163, 184, 0.85);
+      transform: translateY(-1px);
+    }
+
+    .btn-icon {
+      width: 18px;
+      height: 18px;
+      border-radius: 999px;
+      border: 1px solid rgba(148, 163, 184, 0.7);
+      display: grid;
+      place-items: center;
+      font-size: 11px;
+    }
+
+    .hero-right {
+      position: relative;
+    }
+
+    .hero-card {
+      background: radial-gradient(circle at top left, rgba(56, 189, 248, 0.06), rgba(15, 23, 42, 0.98));
+      border-radius: 22px;
+      border: 1px solid rgba(148, 163, 184, 0.4);
+      padding: 18px 18px 18px;
+      box-shadow: var(--shadow-soft);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero-card-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 14px;
+      gap: 12px;
+    }
+
+    .hero-card-title {
+      font-size: 13px;
+      color: #e5e7eb;
+    }
+
+    .hero-card-role {
+      font-size: 11px;
+      color: #a5b4fc;
+    }
+
+    .hero-card-body {
+      font-size: 12px;
+      color: var(--text-muted);
+      border-radius: 14px;
+      padding: 12px;
+      background: rgba(15, 23, 42, 0.95);
+      border: 1px solid rgba(148, 163, 184, 0.3);
+      margin-bottom: 10px;
+    }
+
+    .hero-card-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 8px;
+    }
+
+    .hero-card-tag {
+      font-size: 10px;
+      padding: 4px 9px;
+      border-radius: 999px;
+      background: rgba(15, 23, 42, 0.9);
+      border: 1px solid rgba(148, 163, 184, 0.4);
+      color: #cbd5f5;
+    }
+
+    .hero-card-footer {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: 6px;
+      gap: 10px;
+    }
+
+    .hero-card-meta {
+      font-size: 10px;
+      color: var(--text-muted);
+    }
+
+    .hero-card-pill {
+      font-size: 10px;
+      padding: 4px 10px;
+      border-radius: 999px;
+      border: 1px solid rgba(148, 163, 184, 0.4);
+      background: rgba(15, 23, 42, 0.95);
+      color: #e5e7eb;
+    }
+
+    .hero-glow {
+      position: absolute;
+      inset: 40% -30% -20%;
+      background: radial-gradient(circle at 0% 0%, rgba(59, 130, 246, 0.35), transparent 55%),
+                  radial-gradient(circle at 100% 0%, rgba(56, 189, 248, 0.18), transparent 45%);
+      opacity: 0.9;
+      pointer-events: none;
+      mix-blend-mode: screen;
+    }
+
+    .section-header {
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      gap: 16px;
+      margin-bottom: 16px;
+    }
+
+    .section-title {
+      font-size: 20px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .section-title span {
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+      color: var(--text-muted);
+    }
+
+    .section-subtitle {
+      font-size: 12px;
+      color: var(--text-muted);
+      max-width: 360px;
+      text-align: right;
+    }
+
+    .cards-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 18px;
+    }
+
+    .card {
+      background: radial-gradient(circle at top left, rgba(56, 189, 248, 0.06), rgba(15, 23, 42, 0.98));
+      border-radius: var(--radius-lg);
+      border: 1px solid var(--border-subtle);
+      padding: 14px 14px 16px;
+      box-shadow: var(--shadow-soft);
+      position: relative;
+      overflow: hidden;
+      transition: transform var(--transition-fast), box-shadow var(--transition-fast), border-color var(--transition-fast), background var(--transition-fast);
+    }
+
+    .card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 22px 50px rgba(15, 23, 42, 1);
+      border-color: rgba(56, 189, 248, 0.7);
+      background: radial-gradient(circle at top left, rgba(56, 189, 248, 0.12), rgba(15, 23, 42, 0.98));
+    }
+
+    .card-header {
+      display: flex;
+      justify-content: space-between;
+      gap: 10px;
+      margin-bottom: 8px;
+    }
+
+    .card-title {
+      font-size: 14px;
+      font-weight: 500;
+      color: #e5e7eb;
+    }
+
+    .card-company {
+      font-size: 11px;
+      color: #a5b4fc;
+    }
+
+    .card-meta {
+      font-size: 11px;
+      color: var(--text-muted);
+    }
+
+    .card-body {
+      font-size: 12px;
+      color: var(--text-muted);
+      margin: 6px 0 10px;
+    }
+
+    .tag-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-top: 6px;
+    }
+
+    .tag {
+      font-size: 10px;
+      padding: 3px 9px;
+      border-radius: 999px;
+      background: rgba(15, 23, 42, 0.95);
+      border: 1px solid rgba(148, 163, 184, 0.35);
+      color: #cbd5f5;
+    }
+
+    .card-footer {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: 6px;
+      gap: 10px;
+    }
+
+    .card-link {
+      font-size: 11px;
+      color: #67e8f9;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .card-link span {
+      font-size: 14px;
+    }
+
+    .compact-grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 10px;
+    }
+
+    .compact-card {
+      background: rgba(15, 23, 42, 0.9);
+      border-radius: 14px;
+      border: 1px solid rgba(148, 163, 184, 0.35);
+      padding: 10px 11px;
+      font-size: 11px;
+      color: #e5e7eb;
+    }
+
+    .compact-label {
+      font-size: 10px;
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+      color: var(--text-muted);
+      margin-bottom: 3px;
+    }
+
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 10px;
+    }
+
+    .skills-group-title {
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+      color: var(--text-muted);
+      margin-bottom: 4px;
+    }
+
+    .skills-group-body {
+      font-size: 12px;
+      color: #e5e7eb;
+    }
+
+    .experience-list {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 18px;
+    }
+
+    .experience-card {
+      background: rgba(15, 23, 42, 0.9);
+      border-radius: 16px;
+      border: 1px solid rgba(148, 163, 184, 0.35);
+      padding: 12px 13px;
+      font-size: 12px;
+    }
+
+    .experience-header {
+      display: flex;
+      justify-content: space-between;
+      gap: 10px;
+      margin-bottom: 4px;
+    }
+
+    .experience-role {
+      font-size: 13px;
+      color: #e5e7eb;
+      font-weight: 500;
+    }
+
+    .experience-company {
+      font-size: 11px;
+      color: #a5b4fc;
+    }
+
+    .experience-meta {
+      font-size: 11px;
+      color: var(--text-muted);
+      margin-bottom: 5px;
+    }
+
+    .experience-body {
+      color: var(--text-muted);
+      font-size: 12px;
+    }
+
+    .experience-body ul {
+      margin-top: 5px;
+      padding-left: 16px;
+    }
+
+    .experience-body li {
+      margin-bottom: 3px;
+    }
+
+    .education-card {
+      background: rgba(15, 23, 42, 0.9);
+      border-radius: 16px;
+      border: 1px solid rgba(148, 163, 184, 0.35);
+      padding: 12px 13px;
+      font-size: 12px;
+    }
+
+    .education-title {
+      font-size: 13px;
+      color: #e5e7eb;
+      font-weight: 500;
+      margin-bottom: 2px;
+    }
+
+    .education-meta {
+      font-size: 11px;
+      color: var(--text-muted);
+      margin-bottom: 3px;
+    }
+
+    .footer {
+      border-top: 1px solid rgba(148, 163, 184, 0.3);
+      padding-top: 18px;
+      margin-top: 24px;
+      font-size: 11px;
+      color: var(--text-muted);
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 10px;
+    }
+
+    .footer-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    @media (max-width: 900px) {
+      .hero {
+        grid-template-columns: minmax(0, 1.5fr);
+      }
+      .hero-right {
+        order: -1;
+      }
+      .cards-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+      .experience-list {
+        grid-template-columns: minmax(0, 1fr);
+      }
+      .skills-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+      .compact-grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+      }
+    }
+
+    @media (max-width: 640px) {
+      main {
+        padding-inline: 16px;
+      }
+      .nav {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+      .section-header {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+      .section-subtitle {
+        text-align: left;
+      }
+      .hero-actions {
+        flex-direction: column;
+        align-items: stretch;
+      }
+      .cards-grid {
+        grid-template-columns: minmax(0, 1fr);
+      }
+      .skills-grid {
+        grid-template-columns: minmax(0, 1fr);
+      }
+      .compact-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <header class="nav">
+      <div class="nav-left">
+        <div class="avatar-initials">JE</div>
+        <div class="nav-name">
+          <strong>Jessa Mara T. Elito</strong><br />
+          Software Engineer · Web Developer
+        </div>
+      </div>
+      <nav class="nav-links">
+        <a href="#projects" class="nav-link">Projects</a>
+        <a href="#experience" class="nav-link">Experience</a>
+        <a href="#skills" class="nav-link">Skills</a>
+        <a href="#about" class="nav-link">About</a>
+        <a href="#contact" class="nav-link">Contact</a>
+		<a href="#project-visibility" class="nav-link">About Project Visibility</a>
+      </nav>
+    </header>
+
+    <section class="hero" id="top">
+      <div class="hero-left">
+        <div class="chip">
+          <span class="chip-dot"></span>
+          Available for remote and hybrid roles
+        </div>
+        <h1 class="hero-title">
+          Building robust
+          <span>enterprise web apps</span>
+          with .NET and Angular
+        </h1>
+        <p class="hero-subtitle">
+          Software engineer with around six years of industry experience delivering business‑critical web and desktop applications, from incentive tracking platforms to digital workplace tools and payroll systems.
+        </p>
+        <div class="hero-meta">
+          <div class="pill">
+            <span class="pill-dot"></span>
+            Quezon City, Philippines · Software Engineer
+          </div>
+          <div class="pill">
+            .NET Core · ASP.NET · Angular · MS SQL
+          </div>
+        </div>
+        <div class="hero-actions">
+          <a href="#projects" class="btn btn-primary">
+            <span class="btn-icon">↳</span>
+            View featured projects
+          </a>
+          <a href="#contact" class="btn btn-ghost">
+            <span class="btn-icon">✉</span>
+            Contact me
+          </a>
+        </div>
+      </div>
+
+      <div class="hero-right">
+        <div class="hero-card">
+          <div class="hero-card-header">
+            <div>
+              <div class="hero-card-title">Current Role</div>
+              <div class="hero-card-role">Software Engineer II</div>
+            </div>
+            <span class="badge badge-accent">
+              <span class="badge-dot"></span>
+              Shipping production apps
+            </span>
+          </div>
+          <div class="hero-card-body">
+            Designing and leading development of internal enterprise tools for incentives, HR data, procurement, business continuity, and employee engagement, with end‑to‑end ownership from architecture to deployment and support.
+            <div class="hero-card-tags">
+              <span class="hero-card-tag">Incentive Registration Tool</span>
+              <span class="hero-card-tag">Talent & Capability Data Hub</span>
+              <span class="hero-card-tag">BCP Tool</span>
+              <span class="hero-card-tag">Digital Workplace</span>
+            </div>
+          </div>
+          <div class="hero-card-footer">
+            <div class="hero-card-meta">
+              6+ years experience · Web, desktop, and mobile<br/>
+              Focus: internal tools, analytics, and workflow automation
+            </div>
+            <div class="hero-card-pill">
+              Tech stack: C#, .NET Core, ASP.NET, Angular, MS SQL
+            </div>
+          </div>
+        </div>
+        <div class="hero-glow"></div>
+      </div>
+    </section>
+
+<section id="projects">
+  <div class="section-header">
+    <h2 class="section-title">
+      Projects
+      <span>Selected enterprise tools</span>
+    </h2>
+    <p class="section-subtitle">
+      A selection of internal tools built for incentive management, HR analytics, procurement, business continuity, payroll, and employee career growth. 
+    </p>
+  </div>
+
+  <div class="cards-grid">
+    <!-- NEW: REPH Career Navigator -->
+    <article class="card">
+      <div class="card-header">
+        <div>
+          <h3 class="card-title">REPH Career Navigator</h3>
+          <div class="card-company">Reed Elsevier Philippines · Software Engineer II</div>
+        </div>
+        <span class="badge">Web app · HR & careers</span>
+      </div>
+      <p class="card-body">
+        Internal career platform for REPH employees to view profiles, education, work history, skills, and licenses, conduct career conversations with leaders, and explore possible career path progression. 
+      </p>
+      <div class="tag-list">
+        <span class="tag">Employee profiles</span>
+        <span class="tag">Career conversations</span>
+        <span class="tag">Career path visualization</span>
+      </div>
+      <div class="card-footer">
+        <span class="card-meta">Focus: transparency in careers, structured leader–employee conversations, growth planning</span>
+      </div>
+    </article>
+
+    <article class="card">
+      <div class="card-header">
+        <div>
+          <h3 class="card-title">LNLP Incentive Registration Tool</h3>
+          <div class="card-company">Reed Elsevier Shared Services · Software Engineer</div>
+        </div>
+        <span class="badge">Web app · Internal tool</span>
+      </div>
+      <p class="card-body">
+        Web‑based platform for registering, tracking, and auditing incentives, supporting both bulk uploads and manual registration to ensure accurate and compliant incentive usage. 
+      </p>
+      <div class="tag-list">
+        <span class="tag">C# · .NET Core</span>
+        <span class="tag">ASP.NET</span>
+        <span class="tag">HTML · CSS · TypeScript</span>
+        <span class="tag">Angular</span>
+        <span class="tag">MS SQL Server</span>
+      </div>
+      <div class="card-footer">
+        <span class="card-meta">Features: bulk upload, detailed audit trails, reporting dashboards</span>
+      </div>
+    </article>
+
+    <article class="card">
+      <div class="card-header">
+        <div>
+          <h3 class="card-title">Concierge & Visitor Management Tool</h3>
+          <div class="card-company">Reed Elsevier Shared Services · Software Engineer</div>
+        </div>
+        <span class="badge">Web app · Operations</span>
+      </div>
+      <p class="card-body">
+        Reception‑focused solution for visitor logs, package management, and automated employee notifications, improving accountability and front‑desk efficiency. 
+      </p>
+      <div class="tag-list">
+        <span class="tag">ASP.NET</span>
+        <span class="tag">Email notifications</span>
+        <span class="tag">Visitor & delivery logs</span>
+      </div>
+      <div class="card-footer">
+        <span class="card-meta">Features: visitor logging, package tracking, email alerts, pickup confirmation</span>
+      </div>
+    </article>
+
+    <article class="card">
+      <div class="card-header">
+        <div>
+          <h3 class="card-title">Talent & Capability Data Hub</h3>
+          <div class="card-company">Reed Elsevier Shared Services · Software Engineer</div>
+        </div>
+        <span class="badge">Web app · HR analytics</span>
+      </div>
+      <p class="card-body">
+        HR data hub that automates tracking of employee learning and development, integrating Workday extracts with course enrollments, completions, and position changes. 
+      </p>
+      <div class="tag-list">
+        <span class="tag">Data processing</span>
+        <span class="tag">Workday reports</span>
+        <span class="tag">Custom reporting</span>
+      </div>
+      <div class="card-footer">
+        <span class="card-meta">Features: bulk data upload, validation, real‑time status, analytics</span>
+      </div>
+    </article>
+
+    <article class="card">
+      <div class="card-header">
+        <div>
+          <h3 class="card-title">Business Continuity Plan Tool</h3>
+          <div class="card-company">Reed Elsevier Shared Services · Software Engineer</div>
+        </div>
+        <span class="badge">Web app · Risk & compliance</span>
+      </div>
+      <p class="card-body">
+        Internal application for registering, approving, and tracking business continuity plans with dashboards and analytics for organizational readiness. 
+      </p>
+      <div class="tag-list">
+        <span class="tag">Approval workflows</span>
+        <span class="tag">Dynamic dashboards</span>
+        <span class="tag">Reporting</span>
+      </div>
+      <div class="card-footer">
+        <span class="card-meta">Features: plan templates, role‑based approvals, visual analytics</span>
+      </div>
+    </article>
+
+    <article class="card">
+      <div class="card-header">
+        <div>
+          <h3 class="card-title">HR Engagement & ERG Tool</h3>
+          <div class="card-company">Reed Elsevier Shared Services · Software Engineer</div>
+        </div>
+        <span class="badge">Web app · HR & events</span>
+      </div>
+      <p class="card-body">
+        Platform for HR engagement, events, and employee resource groups, supporting event creation, approvals, pre‑registration, and post‑event documentation. 
+      </p>
+      <div class="tag-list">
+        <span class="tag">Event workflows</span>
+        <span class="tag">Registration & attendance</span>
+        <span class="tag">Analytics</span>
+      </div>
+      <div class="card-footer">
+        <span class="card-meta">Features: approvals, reminders, proof‑of‑completion uploads</span>
+      </div>
+    </article>
+  </div>
+
+  <div style="margin-top:18px" class="cards-grid">
+    <article class="card">
+      <div class="card-header">
+        <div>
+          <h3 class="card-title">Purchase Requisition & PO Tool</h3>
+          <div class="card-company">Neltex Development Co., Inc. · Programmer Analyst</div>
+        </div>
+        <span class="badge">Web app · Procurement</span>
+      </div>
+      <p class="card-body">
+        Procurement system to create, approve, and track purchase requisitions and purchase orders with SAP ABAP integration for real‑time synchronization. 
+      </p>
+      <div class="tag-list">
+        <span class="tag">C# · ASP.NET</span>
+        <span class="tag">Angular · jQuery · AJAX</span>
+        <span class="tag">SAP ABAP integration</span>
+        <span class="tag">MS SQL Server</span>
+      </div>
+      <div class="card-footer">
+        <span class="card-meta">Features: custom workflows, SAP posting, PO reporting</span>
+      </div>
+    </article>
+
+    <article class="card">
+      <div class="card-header">
+        <div>
+          <h3 class="card-title">Digital Workplace Tool</h3>
+          <div class="card-company">Neltex Development Co., Inc. · Programmer Analyst</div>
+        </div>
+        <span class="badge">Web app · Workflow automation</span>
+      </div>
+      <p class="card-body">
+        Paperless workflow platform inspired by Google Forms, with custom form builder, approval workflows, database integration, and detailed reporting. 
+      </p>
+      <div class="tag-list">
+        <span class="tag">Form builder</span>
+        <span class="tag">Approvals history</span>
+        <span class="tag">Database integration</span>
+      </div>
+      <div class="card-footer">
+        <span class="card-meta">Goal: eliminate paper forms and increase process transparency</span>
+      </div>
+    </article>
+
+    <article class="card">
+      <div class="card-header">
+        <div>
+          <h3 class="card-title">Sales Executive Reporting Tool</h3>
+          <div class="card-company">Neltex Development Co., Inc. · Programmer Analyst</div>
+        </div>
+        <span class="badge">Web app · Analytics</span>
+      </div>
+      <p class="card-body">
+        Reporting interface for division heads and VPs to monitor sales targets, daily sales, and totals with multi‑level filters and exportable reports. 
+      </p>
+      <div class="tag-list">
+        <span class="tag">Sales dashboards</span>
+        <span class="tag">Filtering & drill‑down</span>
+        <span class="tag">Export to Excel/CSV</span>
+      </div>
+      <div class="card-footer">
+        <span class="card-meta">Focus: visibility, ease of use, and actionable insights</span>
+      </div>
+    </article>
+  </div>
+</section>
+
+
+    <section id="experience">
+      <div class="section-header">
+        <h2 class="section-title">
+          Experience
+          <span>Roles & responsibilities</span>
+        </h2>
+        <p class="section-subtitle">
+          End‑to‑end contribution across architecture, development, performance optimization, and mentoring in both web and desktop ecosystems.
+        </p>
+      </div>
+
+      <div class="experience-list">
+        <article class="experience-card">
+          <div class="experience-header">
+            <div>
+              <div class="experience-role">Lead Developer</div>
+              <div class="experience-company">Decillion Australia Pty Ltd</div>
+            </div>
+            <div class="badge">Aug 2024 – Oct 2025</div>
+          </div>
+          <div class="experience-meta">Windows desktop & web applications · C# · .NET</div>
+          <div class="experience-body">
+            <ul>
+              <li>Lead development of Windows and web applications, focusing on performance and memory optimization.</li>
+              <li>Conduct code reviews, mentor junior developers, and recommend new technologies and frameworks.</li>
+              <li>Design and build RESTful APIs to connect front‑end and back‑end services.</li>
+            </ul>
+          </div>
+        </article>
+
+        <article class="experience-card">
+          <div class="experience-header">
+            <div>
+              <div class="experience-role">Software Engineer II</div>
+              <div class="experience-company">Reed Elsevier Philippines / Shared Services</div>
+            </div>
+            <div class="badge">Apr 2023 – Present</div>
+          </div>
+          <div class="experience-meta">Enterprise web applications · .NET Core · Angular</div>
+          <div class="experience-body">
+            <ul>
+              <li>Translate business requirements into functional designs and code for web products and internal tools.</li>
+              <li>Collaborate with stakeholders on system interfaces, perform code reviews, and implement best practices.</li>
+              <li>Deliver applications using .NET Core, Entity Framework, jQuery, AJAX, HTML/CSS/TypeScript, Angular, and MS SQL Server.</li>
+            </ul>
+          </div>
+        </article>
+
+        <article class="experience-card">
+          <div class="experience-header">
+            <div>
+              <div class="experience-role">Programmer Analyst</div>
+              <div class="experience-company">Neltex Development Co., Inc.</div>
+            </div>
+            <div class="badge">Jun 2020 – Mar 2023</div>
+          </div>
+          <div class="experience-meta">Web, mobile, and SAP‑integrated tools</div>
+          <div class="experience-body">
+            <ul>
+              <li>Led design and development for web applications integrated with SAP modules and SQL databases.</li>
+              <li>Built mobile apps with Xamarin .NET and APIs for mobile and web consumption.</li>
+              <li>Owned full SDLC: system analysis, development, testing, implementation, and user support.</li>
+            </ul>
+          </div>
+        </article>
+
+        <article class="experience-card">
+          <div class="experience-header">
+            <div>
+              <div class="experience-role">Programmer</div>
+              <div class="experience-company">Trident Electronics Corp.</div>
+            </div>
+            <div class="badge">Oct 2018 – Mar 2020</div>
+          </div>
+          <div class="experience-meta">Payroll & timekeeping systems · VB.NET · ASP.NET</div>
+          <div class="experience-body">
+            <ul>
+              <li>Developed payroll and timekeeping software, including encrypted data storage for compliance.</li>
+              <li>Migrated legacy applications, conducted end‑user training, and produced technical documentation.</li>
+              <li>Created encryption DLLs aligned with the Data Privacy Act of 2012.</li>
+            </ul>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section id="skills">
+      <div class="section-header">
+        <h2 class="section-title">
+          Skills
+          <span>Technologies & strengths</span>
+        </h2>
+        <p class="section-subtitle">
+          Strong full‑stack foundation in Microsoft technologies, modern front‑end frameworks, and database‑driven web application design.
+        </p>
+      </div>
+
+      <div class="skills-grid">
+        <div>
+          <div class="skills-group-title">Web & front‑end</div>
+          <div class="skills-group-body">
+            HTML · CSS · JavaScript · TypeScript · Bootstrap · jQuery · Angular
+          </div>
+        </div>
+        <div>
+          <div class="skills-group-title">Back‑end & frameworks</div>
+          <div class="skills-group-body">
+            ASP.NET · .NET Core · C# · VB.NET · Java · REST API · Microservices concepts
+          </div>
+        </div>
+        <div>
+          <div class="skills-group-title">Databases & reporting</div>
+          <div class="skills-group-body">
+            MS SQL Server · T‑SQL · PostgreSQL · Stored Procedures · Crystal Reports · SAP ABAP integration
+          </div>
+        </div>
+        <div>
+          <div class="skills-group-title">Platforms & tools</div>
+          <div class="skills-group-body">
+            Windows desktop apps · Xamarin .NET mobile · Git · Agile practices
+          </div>
+        </div>
+        <div>
+          <div class="skills-group-title">Core competencies</div>
+          <div class="skills-group-body">
+            Web application development · Systems analysis · Debugging · API design · Performance optimization
+          </div>
+        </div>
+        <div>
+          <div class="skills-group-title">Soft skills</div>
+          <div class="skills-group-body">
+            Mentoring · Cross‑functional collaboration · Communication · Resilience and efficiency
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="about">
+      <div class="section-header">
+        <h2 class="section-title">
+          About
+          <span>Background & education</span>
+        </h2>
+        <p class="section-subtitle">
+          Passionate about building practical tools that simplify processes, improve visibility, and empower non‑technical users through intuitive interfaces.
+        </p>
+      </div>
+
+      <div class="experience-list">
+        <article class="education-card">
+          <div class="education-title">Bachelor of Science in Information Technology</div>
+          <div class="education-meta">Quezon City University · 2014 – 2018</div>
+          <p>
+            Recognitions: Best Capstone (LAN‑based category) and SYDP scholar.
+          </p>
+        </article>
+
+        <article class="education-card">
+          <div class="education-title">What drives my work</div>
+          <p>
+            Enjoys transforming manual, paper‑based, or spreadsheet‑driven processes into integrated web applications with clear workflows, analytics, and audit trails for business users.
+          </p>
+        </article>
+      </div>
+
+      <div style="margin-top:16px" class="compact-grid">
+        <div class="compact-card">
+          <div class="compact-label">Languages</div>
+          <div>C# · VB.NET · Java · JavaScript · TypeScript</div>
+        </div>
+        <div class="compact-card">
+          <div class="compact-label">Domains</div>
+          <div>HR & L&D · Incentives · Procurement · Payroll · Manufacturing</div>
+        </div>
+        <div class="compact-card">
+          <div class="compact-label">Strengths</div>
+          <div>Problem solving · Ownership · Attention to detail</div>
+        </div>
+        <div class="compact-card">
+          <div class="compact-label">Collaboration</div>
+          <div>Works well in agile, cross‑functional teams, and mentoring roles</div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact">
+      <div class="section-header">
+        <h2 class="section-title">
+          Contact
+          <span>Let’s build something</span>
+        </h2>
+        <p class="section-subtitle">
+          Open to software engineering, web development, and full‑stack roles where enterprise‑grade internal tools and data‑driven applications are a priority.
+        </p>
+      </div>
+
+      <div class="experience-list">
+        <article class="education-card">
+          <div class="education-title">Get in touch</div>
+          <p>
+            Email: <a href="mailto:jessamaraelito@gmail.com">jessamaraelito@gmail.com</a><br />
+            Location: Quezon City, Philippines<br />
+            Phone: 0998&nbsp;355&nbsp;2574
+          </p>
+          <p style="margin-top:8px;font-size:11px;color:#9ca3af;">
+            For references and additional details, a full CV is available on request.
+          </p>
+        </article>
+      </div>
+    </section>
+
+<section id="project-visibility">
+  <div class="section-header">
+    <h2 class="section-title">
+      Project Visibility Notice
+    </h2>
+  </div>
+  <p style="font-size:13px;color:#9ca3af;max-width:720px;">
+    The projects presented here are proprietary internal tools developed for employers. To respect confidentiality and ownership agreements, this portfolio focuses on functionality highlights and technical details rather than UI designs or proprietary visual assets.
+  </p>
+</section>
+</section>
+    <footer class="footer">
+      <div>© <span id="year"></span> Jessa Mara T. Elito. All rights reserved.</div>
+      <div class="footer-links">
+        <a href="#top" class="nav-link">Back to top ↑</a>
+      </div>
+    </footer>
+  </main>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
